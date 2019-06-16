@@ -23,9 +23,9 @@ The following script is a sample that can be created as /etc/logrotate.d/rippled
   endscript
 }
 ```
-Parameters such as `minsize` and `rotate` can be changed depending on the `log_level` set in `rippled.cfg`. This sample script is based on standard `log_level` and will store approximately 2 weeks worth of logs in a compressed format.
+Parameters such as `minsize` and `rotate` can be changed depending on the `log_level` set in `rippled.cfg`. Assuming a default configuration that logs at the `WARN` level, this sample script would store approximately 2 weeks, rolling every other day.
 
-**Note:** Only one system logrotate script should exist per application. Please ensure that you do not have any other log rotation that handles the same directory.
+**Note:** Only one system logrotate script should exist per application. Please ensure that you do not have any other log rotation that handles the same directory. For deb and rpm packages provided by ripple, a logrotate will automatically be installed and can be modified as needed.
 
 _The `logrotate` method is an [admin method](admin-rippled-methods.html) that cannot be run by unprivileged users._
 
